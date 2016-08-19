@@ -1,0 +1,90 @@
+quiet=TRUE
+***this supressed output***
+
+### histogram
+Histogram(Y)
+***replace Y with the actual variable name***
+***default color blue***
+set(colors="gray"
+Histogram(Y, main="My Title", xlab="Y (mm)")
+
+***specify bins, starting at 60 with a bin width of 10.***
+Histogram(Y, bin.start=60, bin.width=10)
+
+***density curve superimposed on the underlying histogram, abbreviated dn.***
+Density(Y)
+
+***box plot, abbreviated bx.***
+BoxPlot(Y)
+
+***dot plot, a scatterplot of one variable abbreviated dp***
+DotPlot(Y)
+
+library(lessR)
+mydata <- Read()
+Histogram(Salary)
+
+mydata <- Read("Employee", format="lessR", quiet=TRUE)
+
+***quit R***
+q()
+
+### arguments
+arguments of a fuction"  infomation used by the function
+
+### decimals
+digits.d 
+
+brief=TRUE
+***suppress all text output in the console***
+
+### $ notation
+***to prefix the name of the data table to the variable name***
+hist(mydata$Salary)
+
+***the R with function to wrap around the function call
+note:  this histogram is not colored in, no grid lines, no text output***
+with(mydata, hist(Salary))
+
+### the c function
+***this is to combine a list of values
+':' notations
+  ***this is to list items, such as 1 - 8
+  1:8
+
+### col.fill option
+***filling a histogram with two different colors***
+Histogram(Salary, col.fill=c("gray40", "gray70"))
+***NOTE! now it begins with color***
+Histogram(Salary, color.fill=c("gray40", "gray70"))
+
+***to set a color theme for subsequent analyses such as gray scale***
+set(colors="gray")
+  ***if you prefer a specific theme over the default blue, add this set statement to your .Rprogrile file to automatically invoke 
+  the prefer***
+  
+### transperency of bars
+trans.fill.bar
+trans.fill.pt
+***for completely oblique set it to ***
+trans.fill.bar=0
+
+### background color, grid color
+col.bg  col.grid 
+
+theme(colors="dodgerblue", ghost=TRUE, trans.fill.pt=0)
+
+***NOTE! col. is now "color" e.g. color.fill
+
+col.fill    -> color of bars or plotted points.
+col.stroke  -> color of the border of the bars
+col.bg      -> color of the plot background
+col.grid    -> color of the grid lines
+col.axis    -> color of the font used to label the axis values
+col.ticks   -> color of the ticks used to label the axis values
+
+showColors()
+
+Histogram(Salary, color.fill="aquamarine3", color.bg="snow")
+
+18
