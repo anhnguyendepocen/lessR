@@ -1,0 +1,96 @@
+mydata <- Read()
+
+SPSS .sav
+R .rda
+
+### for data files that exist on the web
+mydata <- Read("http://lessRstats.com/data/employee.csv")
+
+### identify a column of the data file that has unique row IDs with the row.names
+option, such as the following if the IDs are in the first column
+
+mydata <- Read(row.names=1)
+
+### for missing values already coded -99 etc
+mydata <- Read(missing=c(-99, "XX"))
+
+### if the data uses comma instead of decimal, Read2 to read a csv file
+mydata <- Read2()
+
+### read variable labels, such as from a separate text file, to add data to provide more info. output
+than what is provided by shorter variable names
+
+mydata <- Read(labels="myLabels.csv")
+
+### write the data file in native R format to save all info regarding data such as any variable lables, which 
+can be quickly read back into R at later time
+
+Write("MyBestData", format="R")
+
+### factor
+R data storage for categorical variables
+
+### read data and assign first column as row IDs
+mydata <- Read(row.names=1)
+
+### n.cat option
+***the max. num of unique values to consider a numeric variable as categorical***
+set(n.cat=4)
+
+### no text output
+mydata <- Read(quiet=TRUE)
+
+### read tab delimited data
+mydata <- Read(sep="\t")
+
+### read data with commas for the decimal separator
+mydata <- Read(sep=";", dec=",") or mydata <- Read2()
+
+### tell R to display a decimal separator as a comma
+options(OutDec=",")
+
+?options
+
+### skip specified number of lines (comments)
+mydata <- Read(skip=6)
+
+### fix width data
+fwd
+***all data values for a variable occur in specified columns***
+
+  ### rep function
+    *** create a string of characters by repeating a specified set of characters ***
+    rep(1,20)
+      ***will process 20 1's as if they were entered manually***
+  
+  ### function to
+    ***will read a set of variables with prefixed character string***
+    to("m",20)
+      ***out put will be "m01" "m02" etc
+
+  ### col.names
+    specify variable names
+  
+  ***read fwd with numbered variable names***
+    mydata <- Read(widths=c(4,1,rep(1,20)),
+    col.names=c("ID", "Gender", to("m",20)))
+  
+### reading data internally from lessR
+mydata <- Read("Employee", format="lessR")
+
+***variable labels a description (usually longer) of a variable's meaning***
+
+### Excel
+read.xlsx
+
+### read data and variable labels from the same file 
+mydata <- Read(labels="row2)
+
+### standard R functions
+hist(mydata$m06, xlab=label(m06)
+
+### write data in native R format
+Write("MyGoodData", format="R") or wrt.r("MyGoodData")
+
+***R writes the data in current working direction, move later to where you want***
+setwd
