@@ -87,4 +87,25 @@ showColors()
 
 Histogram(Salary, color.fill="aquamarine3", color.bg="snow")
 
-18
+### scales of colors from 0 to 255. same scale used by Adobe Photoshop and also html
+maxColorValue=255
+
+### custom axes labels 
+xlab, ylab
+### graph title
+main=
+
+***example, note with colors, gray are the bars, black is background***
+set(colors="gray.black")
+Histogram(Salary, xlab="Salary (USD)", ylab="Count",
+main="Histogram of Salary")
+
+### saving graphs as a pdf
+Histogram(Salary, pdf.file="myHistogram.pdf", pdf.width=6)
+
+***pdf option: set to TRU to save pdf files for lessR functions that generate multiple graphics***
+
+***text editor vim has R compatibility***
+***data validation option in excel***
+
+
