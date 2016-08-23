@@ -51,5 +51,20 @@ mydata <- Transform(
 Gender=factor(Gender, levels=c(0,1), labels=c("Male", "Female"))
 )
 
+### converting nominal data to ordinal data / ordered function
+mydata <- Transform(Satisfaction=factor(Satisfaction, 
+          levels=c("low", "med", "high"), ordered=TRUE))
 
+### Likert Data
+*** save Likert response category names into an object (here, LikertCats) ***
+LikertCats <-c("Strongly Disagree", "Disagree", "Slightly Disagree", 
+                "Slightly Agree", "Agree", "Strongly Agree")
+
+*** use the above to apply factor trasnformation ***
+mydata <- Transform (
+m06.f = factor(m06, levels=0:5, labels=LikertCats),
+m07.f = factor(m07, levels=0:5, labels=LikertCats),
+m09.f = factor(m09, levels=0:5, labels=LikertCats),
+m10.f = factor(m10, levels=0:5, labels=LikertCats)
+)
       
