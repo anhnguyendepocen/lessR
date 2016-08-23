@@ -1,0 +1,55 @@
+fix(mydata)
+
+### transforming values of data
+*** create a new variable called Weight.root. square root of existing values of Weight ***
+mydata <- Transform(Weight.root=sqrt(Weight))
+
+***if data values for a categorical vaiable are coded with integers, consider
+converting to the R data type for categorical data, a factor, using factor function***
+
+mydata <-Transform(Gender=factor(Gender,
+          levels=c(0,1), labels=c("Male", "Female")))
+
+### levels
+***refers to the integer values of the variables as to read into R.  Lables argument refers to their value lables***
+
+*** if levels of categorical variable are to be presented in an order out of alphabetical,
+use factor function to inform R of the correct order, either with ordered or unordered levels ***
+mydata <- Transform(Satisfaction=factor(Satisfaction,
+            levels=c("low", "med", "high"), ordered=TRUE))
+            
+### recoding scoring items
+*** sometimes survey items are written so that agreeing is actually disagree***
+mydata <- Recode(m03, old=0:5, new=5:0)
+
+### sorting
+mydata <- Sort(c(Gender, Salary), direction=c("+", "-"))
+*** sorting data first by Gender, then by Salary. Gender ascending, Salary descending ***
+
+### subset 
+mydata <- Subset(Gender=="M" & Years<10, columns=c(Years, Salary)
+  *** this data retains only men who have worked in a company for less than 10 yrs, and
+      retain two variables, the number of years worked and salary ***
+      
+  *** opposite of Subset is Merge (merge dataframes).  combines two different data frames into one *** 
+      ***horizontal merge  row.names***
+          mydata <- Merge(dataH1, dataH2, by="row.names")
+      *** vertical merge, when both data frames contain the same variable***
+            mydata <- Merge(dataV1, dataV2)
+
+### new variable from arithmetic 
+*** define a new variable which looks at the number of months employeed at a company ***
+mydata <- Transform(Months=Years*12)
+    *** new variable is months ***
+
+### scale function
+*** standardize the values of a variable ***
+
+### converting an integer variable to a factor
+*** add value labels to a numerically coded categorical variable ***
+mydata <- Transform(
+Gender=factor(Gender, levels=c(0,1), labels=c("Male", "Female"))
+)
+
+
+      
