@@ -67,4 +67,19 @@ m07.f = factor(m07, levels=0:5, labels=LikertCats),
 m09.f = factor(m09, levels=0:5, labels=LikertCats),
 m10.f = factor(m10, levels=0:5, labels=LikertCats)
 )
-      
+
+### reversing Likert score
+mydata <- Recode(m03, old=0:5, new=5:0)
+
+mydata <- Recode(c(m03, m04, m06, m07, m09, m10, m11, m14, m16, m17, m19),
+          old=0:5, new=5:0)
+*** note you can also shorten the avbove to m09:m11 ***
+
+*** suppose a value of 1 indicates missing ***
+mydata <- Recode(Years, old=1, new="missing")
+
+*** change -99 to 'missing ***
+mydata <- Recode(c(Years, Salary), old="missing", new=99)
+
+### sort or srt
+*** sort rows of data frame by specified variables ***
