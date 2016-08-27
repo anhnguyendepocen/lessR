@@ -83,3 +83,25 @@ mydata <- Recode(c(Years, Salary), old="missing", new=99)
 
 ### sort or srt
 *** sort rows of data frame by specified variables ***
+
+### retain data except the ones mentioned use - sign
+mydata <- Subset(columns=-c(Years, Salary))
+
+### rows and column arguments
+mydata <- Subset(Gender=="F" & Years>10, columns=c(Years, Salary))
+
+### horizontal merge
+*** creates new data frame by combining variables from two data frames to merge ***
+***ex. below. two data frames called Emp1a and Emp1b***
+Empla <- Read("http://lessRstats.com/data/Emp1a.csv"), row.names=1)
+Empla <- Read("http://lessRstats.com/data/Emp1b.csv"), row.names=1)
+
+mydata <- Merge(Emp1a, Emp1b, by="row.names")
+
+### vertical merge
+*** join two datasets by rows***
+*** ex ***
+Emp2a <- Read("http://lessRstats.com/data/Emp2a.csv"), row.names=1)
+Emp2b <- Read("http://lessRstats.com/data/Emp2b.csv"), row.names=1)
+
+mydata <- Merge(Emp2a, Emp2b)
