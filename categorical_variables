@@ -1,1 +1,20 @@
+SummaryStats(Y)
+BarChart(Y)
+PieChart(Y)
 
+### CountAll
+*** bar chart (categorical variable or histogram (for continuous variable) ***
+CountAll() or ca()
+
+### two variable summaries
+BarChart(X, by=Y)
+SummaryStats(X, by=Y)
+
+### for crosstabs for three variables use R function table
+with(mydata, table(X, Y, Z))
+
+### mosaic plot
+mosaic(~ Dept + Satisfaction + Gender, shade=TRUE, data=mydata)
+
+### one categorical variable
+mydata <- Read("Employee", format="lessR")
