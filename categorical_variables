@@ -1,3 +1,6 @@
+### first read data into R data, frame mydata
+mydata <- Read("Employee", format="lessR")
+
 SummaryStats(Y)
 BarChart(Y)
 PieChart(Y)
@@ -18,3 +21,12 @@ mosaic(~ Dept + Satisfaction + Gender, shade=TRUE, data=mydata)
 
 ### one categorical variable
 mydata <- Read("Employee", format="lessR")
+
+### setting the bar chart horizontal, with several options
+BarChart(Dept, horiz=TRUE, color.grid="transparent", density=18,
+         main="Bar Chart of Employees in Each Department")
+
+### bar chart, two categorical variables, ordered levels
+mydata <- Transform(Satisfaction=factor(Satisfaction, 
+          levels=c("low", "med", "high"), ordered=TRUE))
+BarChart(Gender, by=Satisfaction)
