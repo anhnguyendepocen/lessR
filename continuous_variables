@@ -1,0 +1,12 @@
+### one-variable scatter plot
+*** appropriate for relatively small number of data values *** 
+ScatterPlot(Salary) 
+
+### box plot with points
+BoxPlot(Salary, add.points=TRUE)
+
+### Time Series
+mydata <- Read("http:// lessRstats.com/data/WorldPopulation.csv")
+LineChart(Population,
+          time.start="1990/1/1", time.by="10 years",
+          xlab="Year", ylab="World Population (millions)")
