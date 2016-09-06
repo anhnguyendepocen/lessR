@@ -1,0 +1,4 @@
+// one-way ANOVA //
+***parametric procedure that compares means under the assumption of non-normality***
+***can use the kruskal.test (Kruskal-Wallis rank sum test) as an alt***
+with(mydata, kruskal.test(Y ~ X))
