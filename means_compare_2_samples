@@ -1,1 +1,5 @@
+***ttest to compare means of the variable of interests across two groups***
+ttest(Salary ~ Gender)
 
+***Wilcoxon rank sum test***
+with(mydata, wilcox.test(Salary ~ Gender, conf.int=TRUE))
