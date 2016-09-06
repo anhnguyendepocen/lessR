@@ -1,0 +1,14 @@
+Regression(Y ~ X)
+
+//reg with standarizing the variables//
+Regression(Y ~ X, standardize=TRUE)
+
+//X1.new option//
+***prediction with 95% confidence interval***
+***ex below for predictor variable of 10 or 25***
+Regression(Y ~ X, X1.new=c(10,25))
+
+// reg.brief //
+*** also, brief=TRUE ***
+*** gives the basic analysis / summary ***
+
