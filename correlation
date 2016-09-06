@@ -1,0 +1,19 @@
+ScatterPlot(X,Y)
+
+***set graphics=TRUE to obtain a scatter plot matrix and heat map of corr***
+mycor <- Correlation()
+
+***Spearman or Kendall correlations for non-parametric correlation coefficients***
+ScatterPlot(X, Y, method="spearman")
+Correlation(method="kendall")
+
+// scatterplot w ellipse //
+ScatterPlot(X, Y, ellipse=TRUE)
+
+// scatterplot with Gender as classification variable //
+ScatterPlot(Years, Salary, by=Gender)
+
+//levels function//
+***displacys the levels of a factor variable***
+levels(mydata$Gender)
+[1] "F" "M"
