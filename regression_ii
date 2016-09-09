@@ -1,0 +1,19 @@
+Regression(Y ~ V1 + V2)
+
+Logit(Ybinary ~ V1 + V2)
+
+____________
+
+Tolerance(bj) = 1 - R^2j  VIF = VIF(bj) = 1 / TOLERANCE = 1 / 1-R^2j
+
+/// see leaps package ///
+
+*** remove all rows with any missing values ***
+na.omit
+
+///nested models//
+*** test a nested regression model against a full model ***
+Nest(Reading, c(Abset), c(Verbal,Absent,Income))
+
+///3D scatterplot about the regression plane///
+Regression(Reading ~ Verbal + Absent, scatter.3D=TRUE)
